@@ -1,0 +1,99 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --object-height: 300px;
+  --object-width: 300px;
+  --object-circle-radius: 150px;
+}
+
+body {
+  height: 100vh;
+  background: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  /* top: 50%; */
+  height: var(--object-height);
+  width: var(--object-width);
+  border: #333 1px solid;
+  border-radius: 20px;
+  background: transparent;
+}
+
+.content-top,
+.content-botton {
+  position: relative;
+  height: var(--object-circle-radius);
+  width: 100%;
+  background: transparent;
+}
+
+.content-top {
+  z-index: 1;
+}
+.content-botton {
+  z-index: 2;
+}
+
+.circleTop {
+  position: absolute;
+  height: 100%;
+  width: var(--object-width);
+  background: rgb(250, 210, 30);
+  clip-path: circle(
+    var(--object-circle-radius) at var(--object-circle-radius) 100%
+  );
+}
+
+.separator {
+  position: absolute;
+  height: 40px;
+  width: var(--object-width);
+  background: #333;
+  top: 49%;
+  z-index: 100;
+}
+
+.circleBotton {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: var(--object-width);
+  background: rgb(153, 127, 13);
+  clip-path: circle(
+    var(--object-circle-radius) at var(--object-circle-radius) 0%
+  );
+}
+
+#circle {
+  position: absolute;
+  left: 200px;
+  top: 50px;
+  width: 240px;
+  height: 240px;
+  /* border-radius: 50%; */
+  /* float: right;
+  shape-outside: circle(50%);
+  clip-path: circle(50%); */
+  /* transform-origin: 50% 100%; */
+  /* transform: rotate(140deg); */
+  /* clip-path: polygon(50% 0, 50% 50%, 100% 41.2%, 100% 0); */
+
+  /* TOP */
+  /* clip-path: polygon(0% 0, 0% 50%, 100% 50%, 100% 0); */
+
+  /* RIGHT */
+  /* clip-path: polygon(50% 0, 50% 100%, 100% 100%, 100% 0); */
+
+  /* RIGHT */
+  /* clip-path: polygon(100% 0, 100% 100%, -1% 100%, 100% 0); */
+  clip-path: circle(200px at 20px 0%);
+  background: lightblue;
+  visibility: hidden;
+}
